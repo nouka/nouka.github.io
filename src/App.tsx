@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import BasicScreen from './components/screen/BasicScreen'
+import ProfileScreen from './components/screen/ProfileScreen'
+import SkillSheetScreen from './components/screen/SkillSheetScreen'
+import WorksScreen from './components/screen/WorksScreen'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {/* 基本情報 */}
+      <BasicScreen />
+      {/* 自己紹介 */}
+      <ProfileScreen />
+      {/* 保有スキル */}
+      <SkillSheetScreen />
+      {/* 作品集 */}
+      <WorksScreen />
+    </>
+  )
 }
 
-export default App;
+export default App
