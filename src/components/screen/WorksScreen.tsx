@@ -23,6 +23,9 @@ const WorksScreen = () => (
       <li>
         <a href="/games/cat-escape">CAT ESCAPE</a>
       </li>
+      <li>
+        <a href="/games/climb-cloud">CLIME CLOUD</a>
+      </li>
     </ul>
   </>
 );
