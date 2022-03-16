@@ -1,7 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const Page = styled.div``;
 
 const WorksScreen = () => (
-  <>
+  <Page>
     <h2>実績</h2>
     <h3>WEB</h3>
     <dl>
@@ -27,7 +30,7 @@ const WorksScreen = () => (
         <a href="/games/climb-cloud">CLIME CLOUD</a>
       </li>
     </ul>
-  </>
+  </Page>
 );
 
 export default WorksScreen;

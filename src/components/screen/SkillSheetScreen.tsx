@@ -1,7 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const Page = styled.div``;
 
 const SkillSheetScreen = () => (
-  <>
+  <Page>
     <h2>スキル</h2>
     <ul>
       <li>PHP（8年）</li>
@@ -39,7 +42,7 @@ const SkillSheetScreen = () => (
         </a>
       </dd>
     </dl>
-  </>
+  </Page>
 );
 
 export default SkillSheetScreen;

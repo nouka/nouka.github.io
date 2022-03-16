@@ -1,7 +1,20 @@
 import React from "react";
+import styled from "styled-components";
+import TileGrass from "../../assets/tile-grass.png";
+import TilesetGrass from "../../assets/tileset-grass.png";
+
+const Page = styled.div``;
+
+const GrassFlower = styled.div`
+  width: 64px;
+  height: 64px;
+  background-image: url(${TilesetGrass});
+  background-position: -128px 0;
+  background-repeat: no-repeat;
+`;
 
 const BasicScreen = () => (
-  <>
+  <Page>
     <h1>{process.env.REACT_APP_TITLE}</h1>
     <dl>
       <dt>Facebook</dt>
@@ -51,7 +64,7 @@ const BasicScreen = () => (
         <a href="mailto: noka.blank@gmail.com">noka.blank@gmail.com</a>
       </dd>
     </dl>
-  </>
+  </Page>
 );
 
 export default BasicScreen;
