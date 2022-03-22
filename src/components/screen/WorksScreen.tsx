@@ -29,6 +29,15 @@ const WorksScreen = () => (
       <li>
         <a href="/games/climb-cloud">CLIME CLOUD</a>
       </li>
+      <li>
+        <a href="/games/igaguri">IGAGURI</a>
+      </li>
+      <li>
+        <a href="/games/apple-catch">APPLE CATCH</a>
+      </li>
+      <li>
+        <a href="/games/ml-sample">ML SAMPLE</a>
+      </li>
     </ul>
   </Page>
 );
