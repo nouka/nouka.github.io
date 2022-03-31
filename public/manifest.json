@@ -1,6 +1,6 @@
 {
-  "short_name": "%REACT_APP_TITLE%",
-  "name": "%REACT_APP_TITLE%",
+  "short_name": "%REACT_APP_SHORT_NAME%",
+  "name": "%REACT_APP_NAME%",
   "icons": [
     {
       "src": "favicon.ico",
