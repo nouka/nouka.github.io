@@ -4,8 +4,15 @@ import { Position } from "../types/Position";
 /**
  * srcをminとmaxの間に収まる数字に変換する
  */
-const inRange = (src: number, min: number, max: number) => {
+const range = (src: number, min: number, max: number) => {
   return Math.min(Math.max(src, min), max);
+};
+
+/**
+ * srcがminとmaxの間に収まっているか
+ */
+const inRange = (src: number, min: number, max: number) => {
+  return src >= min && src <= max;
 };
 
 /**
@@ -25,4 +32,4 @@ const getDirection = (p1: Position, p2: Position): Direction => {
   throw Error("Unexpected radian.");
 };
 
-export { inRange, getDirection };
+export { range, inRange, getDirection };
