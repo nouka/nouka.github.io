@@ -1,5 +1,6 @@
 import React from "react";
 import tw from "tailwind-styled-components";
+import Collapse from "./Collapse";
 
 const Title = tw.h3`
   bg-black
@@ -23,15 +24,17 @@ const Content = tw.div`
 type Props = {
   children: React.ReactNode;
   title: string;
-  open: boolean;
+  open?: boolean;
 };
 
 const Dialog = (props: Props) => {
   return (
-    <>
-      <Title>{props.title}</Title>
-      {props.open && <Content>{props.children}</Content>}
-    </>
+    <Collapse
+      button={(toggleOpen) => (
+        <Title onClick={() => toggleOpen()}>{props.title}</Title>
+      )}
+      details={<Content>{props.children}</Content>}
+    />
   );
 };
 

@@ -24,37 +24,11 @@ const CharacterBody = styled.div`
 
 type Props = {
   position: Position;
-  playerPosition: Position;
-  handleIn: () => void;
-  handleOut: () => void;
 };
 
 const Goddes = (props: Props) => {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    if (
-      inRange(
-        props.playerPosition.x,
-        ref.current.offsetLeft,
-        ref.current.offsetLeft + ref.current.offsetWidth
-      ) &&
-      inRange(
-        props.playerPosition.y,
-        ref.current.offsetTop,
-        ref.current.offsetTop + ref.current.offsetHeight
-      )
-    ) {
-      props.handleIn();
-    } else {
-      props.handleOut();
-    }
-  }, [props, props.playerPosition, ref]);
   return (
     <Character
-      ref={ref}
       style={{ left: `${props.position.x}px`, top: `${props.position.y}px` }}
     >
       <CharacterBody />

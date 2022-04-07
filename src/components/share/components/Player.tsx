@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import PlayerImage from "../../../assets/player.png";
 import { Direction, DirectionType } from "../../../types/Direction";
@@ -12,10 +12,8 @@ interface Props {
 
 const Character = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 9999;
-  transition-property: transform;
+  transition-property: top left;
 `;
 
 const CharacterWrapper = styled.div`
@@ -67,7 +65,8 @@ const Player = (props: Props) => {
   return (
     <Character
       style={{
-        transform: `translate(${props.position.x}px, ${props.position.y}px)`,
+        top: `${props.position.y}px`,
+        left: `${props.position.x}px`,
         transitionDuration: `${props.speed}s`,
       }}
     >

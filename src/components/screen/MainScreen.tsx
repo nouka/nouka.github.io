@@ -26,7 +26,6 @@ const MainScreen = () => {
     y: stageHeight / 2,
   });
   const [direction, setDirection] = useState<Direction>(DirectionType.Bottom);
-  const [profileOpen, setProfileOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const handleMouseDown = (e: MouseEvent) => {
     if (!ref.current) {
@@ -35,7 +34,6 @@ const MainScreen = () => {
     const nextPosition = {
       x: range(e.pageX - ref.current.offsetLeft, 0, ref.current.offsetWidth),
       y: range(e.pageY - ref.current.offsetTop, 0, ref.current.offsetHeight),
-      z: range(e.pageY - ref.current.offsetTop, 0, ref.current.offsetHeight),
     };
     setDirection(getDirection(position, nextPosition));
     setPosition(nextPosition);
@@ -45,13 +43,8 @@ const MainScreen = () => {
   return (
     <Content ref={ref}>
       <Player position={playerPosition} speed={2} direction={direction} />
-      <Goddes
-        position={{ x: stageWidth / 2 - 100, y: stageHeight / 2 }}
-        playerPosition={playerPosition}
-        handleIn={() => setProfileOpen(true)}
-        handleOut={() => setProfileOpen(false)}
-      />
-      <Dialog title="経歴" open={profileOpen}>
+      <Goddes position={{ x: stageWidth / 2 - 100, y: stageHeight / 2 }} />
+      <Dialog title="経歴">
         <ul>
           <li>
             大学時代はグラフィックデザインを専攻。CGアート研究会を立ち上げ展示会を開催する。
@@ -68,7 +61,7 @@ const MainScreen = () => {
           <li>副業でTechAcademyフロントエンド講師を務める。</li>
         </ul>
       </Dialog>
-      <Dialog title="趣味" open={false}>
+      <Dialog title="趣味">
         <ul>
           <li>
             好きな本：「コードコンプリート」「リーダブルコード」「レガシーコード改善ガイド」「JavaScript:
@@ -83,7 +76,7 @@ const MainScreen = () => {
           <li>最近は愛犬にべったり。</li>
         </ul>
       </Dialog>
-      <Dialog title="スキル" open={false}>
+      <Dialog title="スキル">
         <ul>
           <li>PHP（8年）</li>
           <li>HTML（10年）</li>
@@ -102,14 +95,14 @@ const MainScreen = () => {
           <li>MySQL（8年）</li>
         </ul>
       </Dialog>
-      <Dialog title="ツール・開発環境" open={false}>
+      <Dialog title="ツール・開発環境">
         <ul>
           <li>VSCode、AWS Cloud9、Xcode、Android Studio</li>
           <li>Photoshop、Illustrator、AdobeXD</li>
           <li>GitHub、TortoiseSVN、Docker、Vagrant</li>
         </ul>
       </Dialog>
-      <Dialog title="貢献" open={false}>
+      <Dialog title="貢献">
         <dl>
           <dt>新型コロナウィルス感染症対策サイト</dt>
           <dd>
@@ -123,7 +116,7 @@ const MainScreen = () => {
           </dd>
         </dl>
       </Dialog>
-      <Dialog title="実績" open={false}>
+      <Dialog title="実績">
         <>
           <h3>WEB</h3>
           <dl>
